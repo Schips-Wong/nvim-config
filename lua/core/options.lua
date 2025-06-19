@@ -1,5 +1,6 @@
 local opt, api = vim.opt, vim.api
 opt.termguicolors = true
+opt.mouse = ""
 opt.ttyfast = true
 opt.cursorline = true
 opt.wrap = false
