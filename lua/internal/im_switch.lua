@@ -1,9 +1,12 @@
 local input_toggle = 0
 
 local switch = {
-  en = 'fcitx5-remote -c',
-  zh = 'fcitx5-remote -o',
-  check = 'fcitx5-remote',
+  --en = 'fcitx5-remote -c',
+  --zh = 'fcitx5-remote -o',
+  --check = 'fcitx5-remote',
+  en = '',
+  zh = '',
+  check = '',
 }
 
 local function change_to_en()
