@@ -12,7 +12,7 @@ map.n({
   ['<leader><leader>'] = '/<++><CR>:noh<CR>"_c4l',
   ['j'] = 'gj',
   ['k'] = 'gk',
-  ['J'] = '<c-d>',
+  --['J'] = '<c-d>',
   ['K'] = '<c-u>',
   -- window
   ['<C-h>'] = '<C-w>h',
@@ -39,6 +39,39 @@ map.nx('<leader>cc', function()
   return require('vim._comment').operator() .. '_'
 end, { expr = true })
 
+map.nx({
+  --  切换行号显示
+  ["<F1>"] = cmd('silent set nonumber! nonumber?'),
+  --  切换 TAB/4空格
+  ["<F2>"] = "<Cmd>set ts=4<cr><Cmd>set expandtab! expandtab?<cr><Cmd>%retab!<cr>",
+  -- 切换打开的文件
+  ["<F9>"] = cmd('silent bp'),
+  ["<F10>"] = cmd('silent bn'),
+  -- 在粘贴完成时，把光标移动到粘贴内容结束的位置
+  ["p"] = "gp",
+  -- 不需要 Shift + ; 即可 ;
+  [";"] = ":",
+  -- 空格+q 退出
+  ["<leader>q"] = "<ESC>:q<cr>",
+  ["<leader>qa"] = "<ESC>:qa!<cr>",
+  -- 空格+w 保存
+  ["<leader>w"] = "<ESC>:w<cr>",
+  ["<leader>wa"] = "<ESC>:wa!<cr>",
+  -- Vim搜索结果居中展示
+  ["n"] = "nzz",
+  ["N"] = "Nzz",
+  ["*"] = "*zz",
+  ["#"] = "#zz",
+  -- sv 水平分屏
+  ["sv"] = cmd('silent vsp'),
+  -- sh 垂直分屏
+  ["sh"] = cmd('silent sp'),
+  -- sc 关闭当前分屏 (s = close)
+  ["sc"] = '<C-w>c',
+  -- so 关闭其他分屏 (o = other)
+  ["so"] = '<C-w>o',
+})
+
 map.v({
   ['N'] = ':normal',
   ['Y'] = '"+y',
@@ -54,4 +87,11 @@ map.ic({
   ['<c-l>'] = '<Right>',
   ['<c-a>'] = '<Home>',
   ['<c-e>'] = '<End>',
+})
+
+map.x({
+  ['J'] = ":m '>+1<CR>gv=gv",
+  ['K'] = ":m '<-2<CR>gv=gv",
+  ["<A-j>"] = ":m '>+1<CR>gv=gv",
+  ["<A-k>"] = ":m '<-2<CR>gv=gv",
 })
