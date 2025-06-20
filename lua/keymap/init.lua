@@ -7,7 +7,7 @@ map.n({
   ['<F5>'] = function()
     require('internal.code_running').running(false)
   end,
-  ['<F10>'] = function()
+  ['<F6>'] = function()
     require('internal.code_running').running(true)
   end,
   -- yazi
