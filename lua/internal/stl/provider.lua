@@ -115,7 +115,7 @@ function pd.mode()
 
   result.attr = stl_attr('StatusLineMode')
   result.attr.bold = true
-  result.attr.italic = true
+  result.attr.italic = false
 
   return result
 end
@@ -128,7 +128,7 @@ function pd.fileinfo()
   }
   result.attr = stl_attr('StatusLineFileInfo')
   result.attr.bold = true
-  result.attr.italic = true
+  result.attr.italic = false
   return result
 end
 
@@ -195,7 +195,7 @@ function pd.gitinfo(git_t)
     event = { 'User GitSignsUpdate', 'BufEnter' },
   }
   result.attr = stl_attr(git_t == 'head' and 'StatusLineBranch' or 'Diff' .. alias[git_t])
-  result.attr.italic = true
+  result.attr.italic = false
   return result
 end
 
@@ -249,7 +249,7 @@ function pd.lsp()
   }
   result.attr = stl_attr('StatusLineLsp')
   result.attr.bold = true
-  result.attr.italic = true
+  result.attr.italic = false
   return result
 end
 
@@ -354,7 +354,7 @@ function pd.filesize()
   }
 
   result.attr = stl_attr('StatusLineEncoding')
-  result.attr.italic = true
+  result.attr.italic = false
   return result
 end
 
@@ -366,7 +366,7 @@ function pd.encoding()
   }
 
   result.attr = stl_attr('StatusLineEncoding')
-  result.attr.italic = true
+  result.attr.italic = false
   return result
 end
 
@@ -378,7 +378,7 @@ function pd.lnumcol()
   }
 
   result.attr = stl_attr('StatlsLineLnum')
-  result.attr.italic = true
+  result.attr.italic = false
   return result
 end
 
